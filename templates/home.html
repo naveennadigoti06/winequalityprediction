@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wine Quality Prediction</title>
+  <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Wine Quality Prediction</h1>
+    <p>Use this tool to predict if the quality of wine is "Good" or "Bad" based on various chemical properties.</p>
+
+    <!-- Main Input Form for Predicting Quality -->
+    <form action="{{ url_for('predict') }}" method="post">
+      <div class="form-group">
+        <label for="fixed-acidity">Fixed Acidity</label>
+        <input type="text" id="fixed-acidity" name="fixed acidity" placeholder="Enter fixed acidity" required />
+      </div>
+      <div class="form-group">
+        <label for="volatile-acidity">Volatile Acidity</label>
+        <input type="text" id="volatile-acidity" name="volatile acidity" placeholder="Enter volatile acidity" required />
+      </div>
+      <div class="form-group">
+        <label for="citric-acid">Citric Acid</label>
+        <input type="text" id="citric-acid" name="citric acid" placeholder="Enter citric acid" required />
+      </div>
+      <div class="form-group">
+        <label for="residual-sugar">Residual Sugar</label>
+        <input type="text" id="residual-sugar" name="residual sugar" placeholder="Enter residual sugar" required />
+      </div>
+      <div class="form-group">
+        <label for="chlorides">Chlorides</label>
+        <input type="text" id="chlorides" name="chlorides" placeholder="Enter chlorides" required />
+      </div>
+      <div class="form-group">
+        <label for="free-sulfur-dioxide">Free Sulfur Dioxide</label>
+        <input type="text" id="free-sulfur-dioxide" name="free sulfur dioxide" placeholder="Enter free sulfur dioxide" required />
+      </div>
+      <div class="form-group">
+        <label for="total-sulfur-dioxide">Total Sulfur Dioxide</label>
+        <input type="text" id="total-sulfur-dioxide" name="total sulfur dioxide" placeholder="Enter total sulfur dioxide" required />
+      </div>
+      <div class="form-group">
+        <label for="density">Density</label>
+        <input type="text" id="density" name="density" placeholder="Enter density" required />
+      </div>
+      <div class="form-group">
+        <label for="pH">pH</label>
+        <input type="text" id="pH" name="pH" placeholder="Enter pH" required />
+      </div>
+      <div class="form-group">
+        <label for="sulphates">Sulphates</label>
+        <input type="text" id="sulphates" name="sulphates" placeholder="Enter sulphates" required />
+      </div>
+      <div class="form-group">
+        <label for="alcohol">Alcohol</label>
+        <input type="text" id="alcohol" name="alcohol" placeholder="Enter alcohol" required />
+      </div>
+
+      <button type="submit" class="btn">Predict</button>
+    </form>
+
+    <div class="result">
+      {{ prediction_text }}
+    </div>
+  </div>
+</body>
+
+</html>
